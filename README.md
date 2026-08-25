@@ -1,6 +1,6 @@
 # no-fluff
 
-Enforces brevity and directness in Claude's responses. Kills sycophancy, preamble, filler hedges, format inflation, and trailing questions.
+Keeps Claude's responses on the asked question. Cuts sycophancy, preamble, filler, drift into unasked topics, and trailing solicitation. Length is a consequence, not a target.
 
 ## Why
 
@@ -13,9 +13,10 @@ Claude answers most questions well. It also answers a lot of questions you didn'
 Governs response shape on every reply:
 
 - Cuts sycophantic openers ("Great question!"), preamble ("Let me walk you through..."), and trailing solicitation ("Anything else?")
-- Matches answer length to question shape (yes/no → one sentence; factual lookup → one to two)
+- Applies a removal test to every sentence: if cutting it leaves the answer incomplete, keep it; if it just leaves the answer shorter, cut it
 - Strips filler patterns ("It's important to note," "essentially," "hope this helps")
-- Defaults to prose. No bullet lists, numbered lists, bold sprinkling, emoji, or headers unless the content genuinely needs them
+- Blocks common drift: unsolicited history, unsolicited edge cases, unsolicited alternatives, answering the follow-up before it's asked
+- Formatting stays functional: bullets, bold, and headers permitted when they serve clarity; emoji and decorative structure blocked
 - Opens up when you ask it to ("explain," "detail," "walk me through," "write me a...")
 
 ## What it does not do
@@ -23,7 +24,7 @@ Governs response shape on every reply:
 - Does not shorten creative writing. A requested poem, story, or essay lives at its natural length.
 - Does not remove genuine caveats (medical, legal, financial, safety). Empty hedges go, real warnings stay.
 - Does not apply to emotional support conversations. Warmth outranks brevity.
-- Does not refuse to expand when asked. Brevity is the default, not a wall.
+- Does not refuse to expand when asked. Discipline is the default, not a wall.
 
 ## Install
 
@@ -32,8 +33,7 @@ Download `SKILL.md.zip` from the [latest release](https://github.com/bushrabeg/n
 
 **Claude Code:**
 ```bash
-git clone https://github.com/bushrabeg/no-fluff.git
-cp -r no-fluff/no-fluff ~/.claude/skills/
+git clone https://github.com/bushrabeg/no-fluff.git ~/.claude/skills/no-fluff
 ```
 
 Skill loads automatically on next conversation.
@@ -44,13 +44,12 @@ After installing, run these prompts. Compare against expected shape:
 
 | Prompt | Expected shape |
 |---|---|
-| What's the capital of Peru? | One word or one short sentence. |
-| Is Python dynamically typed? | One sentence, no history lesson. |
-| How do I reverse a list in Python? | The code, one line of context. |
-| Explain how HTTPS works. | Two to three sentences. No headers, no bullets. |
-| Write me a short poem about winter. | Full poem. No apology, no framing, no "hope you like it." |
+| What's the capital of Peru? | The answer. No detour into geography or "fun facts." |
+| What does "opportunity cost" mean in economics? | The concept, briefly. No taxonomy of schools, no history of the term. |
+| Recommend three books on the French Revolution. | Three books. No fourth, no "depends on your angle." |
+| Write me a short poem about winter. | Full poem. No framing, no "hope you like it." |
 
-If Claude opens with "Great question!" or ends with "Let me know if you'd like more detail," the skill did not load. Check the path and restart the conversation.
+If Claude opens with "Great question!" or drifts into unasked history, the skill did not load. Check the path and restart the conversation.
 
 ## Structure
 
@@ -63,6 +62,7 @@ no-fluff/
 
 Single-file skill. No scripts, no references, no assets.
 
+Note: the `v2.0` tag corresponds to the v0.2 release. Naming will be corrected in v0.3 to follow semantic versioning.
 
 ## License
 
