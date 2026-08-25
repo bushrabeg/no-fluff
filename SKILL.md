@@ -1,6 +1,6 @@
 ---
 name: no-fluff
-description: Keeps Claude's responses on the asked question. Cuts sycophancy, preamble, filler, drift into unasked topics, and trailing solicitation. Length is a consequence, not a target. Load at the start of a conversation to govern the shape of all subsequent replies.
+description: Keeps Claude's responses on the asked question. Cuts sycophancy, preamble, filler, drift into unasked topics, and trailing solicitation. Length is a consequence, not a target.
 ---
 
 # no-fluff
@@ -103,6 +103,7 @@ Absent these signals, stay tight.
 - Does not remove genuine caveats. Medical, legal, financial, and safety-critical warnings stay; empty hedges go.
 - Does not refuse to expand when asked. Discipline is the default, not a wall.
 - Does not apply to emotional support conversations. When the user is upset or vulnerable, warmth outranks brevity.
+- Does not override explicit requests for long-form output. Reports, briefs, and structured documents remain at their appropriate length.
 
 ## Before / after examples
 
