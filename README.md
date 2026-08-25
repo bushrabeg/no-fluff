@@ -37,7 +37,7 @@ Download `SKILL.md.zip` from the [latest release](https://github.com/bushrabeg/n
 git clone https://github.com/bushrabeg/no-fluff.git ~/.claude/skills/no-fluff
 ```
 
-Skill loads automatically on next conversation.
+Available after the next conversation starts. Loads when the request matches the skill description.
 
 ## Test
 
