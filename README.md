@@ -25,6 +25,7 @@ Governs response shape on every reply:
 - Does not remove genuine caveats (medical, legal, financial, safety). Empty hedges go, real warnings stay.
 - Does not apply to emotional support conversations. Warmth outranks brevity.
 - Does not refuse to expand when asked. Discipline is the default, not a wall.
+- Does not override explicit requests for long-form output. Reports, briefs, and structured documents remain at their appropriate length.
 
 ## Install
 
