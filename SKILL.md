@@ -1,6 +1,7 @@
 ---
 name: no-fluff
-description: Keeps Claude's responses on the asked question. Cuts sycophancy, preamble, filler, drift into unasked topics, and trailing solicitation. Length is a consequence, not a target.Use at the start of a conversation, or whenever replies start opening with praise, preamble, unasked history, or trailing questions. Do not use when the user asks for a report, brief, essay, or emotional support.
+description: Keeps Claude's responses on the asked question. Cuts sycophancy, preamble, filler, drift into unasked topics, and trailing solicitation. Length is a consequence, not a target. Use at the start of a conversation, or whenever replies start opening with praise, preamble, unasked history, or trailing questions. Do not use when the user asks for a report, brief, essay, or emotional support.
+license: MIT
 ---
 
 # no-fluff
