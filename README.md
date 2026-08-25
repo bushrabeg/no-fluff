@@ -27,16 +27,13 @@ Governs response shape on every reply:
 
 ## Install
 
-Copy the `no-fluff` folder into your Claude skills directory.
+**Claude.ai:**
+Download `SKILL.md.zip` from the [latest release](https://github.com/bushrabeg/no-fluff/releases/latest), then upload via Settings → Capabilities → Skills.
 
-Personal (all projects):
+**Claude Code:**
 ```bash
-cp -r no-fluff ~/.claude/skills/
-```
-
-Project-specific:
-```bash
-cp -r no-fluff .claude/skills/
+git clone https://github.com/bushrabeg/no-fluff.git
+cp -r no-fluff/no-fluff ~/.claude/skills/
 ```
 
 Skill loads automatically on next conversation.
@@ -59,11 +56,13 @@ If Claude opens with "Great question!" or ends with "Let me know if you'd like m
 
 ```
 no-fluff/
-├── SKILL.md
-└── README.md
+├── LICENSE
+├── README.md
+└── SKILL.md
 ```
 
 Single-file skill. No scripts, no references, no assets.
+
 
 ## License
 
