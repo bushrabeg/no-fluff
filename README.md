@@ -63,8 +63,6 @@ no-fluff/
 
 Single-file skill. No scripts, no references, no assets.
 
-Note: the `v2.0` tag corresponds to the v0.2 release. Naming will be corrected in v0.3 to follow semantic versioning.
-
 ## License
 
 MIT
